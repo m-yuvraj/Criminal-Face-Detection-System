@@ -1,0 +1,5 @@
+Flask
+Flask-CORS
+Pillow
+opencv-python  # Uncomment if OpenCV is needed
+tensorflow     # Uncomment if TensorFlow is needed
