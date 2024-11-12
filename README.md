@@ -1,57 +1,52 @@
 # Criminal Face Detection System
 
-A web-based criminal face detection system that uses a live webcam feed or uploaded photos to detect faces, identify gender, and flag suspicious individuals. This project consists of a **React.js frontend** and a **Flask backend** and is deployed on Vercel (frontend) and Render (backend) for free live hosting.
+This project enables the detection of criminal faces in images using face recognition and facial detection models.
 
-## Table of Contents
+## Features
+- **Criminal Detection**: Detects and identifies known criminals by comparing faces in images.
+- **Data Handling**: Annotation, augmentation, deduplication, and encryption.
+- **Secure Storage**: Encrypts images for secure storage.
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Demo](#demo)
-- [File Structure](#file-structure)
-- [Technologies Used](#technologies-used)
-- [Setup and Installation](#setup-and-installation)
-- [Running the Project Locally](#running-the-project-locally)
-- [Deploying the Project](#deploying-the-project)
-- [License](#license)
+## Setup
+
+### Requirements
+- Install required libraries with `pip install -r requirements.txt`
+- Download Haar cascade files for face detection:
+  - `haarcascade_frontalface_default.xml`
+  - `haarcascade_eye.xml`
+
+Place these in the project directory.
+
+### Running the Server
+1. Run `python app.py` to start the Flask server.
+2. Use endpoints:
+   - `/detect` to detect and identify criminals.
+   - `/upload_criminal` to add criminal images.
+
+### Database Configuration
+1. Connect to your MySQL database.
+2. Run the table creation SQL from the main script.
+
+## How to Annotate Data
+- Use LabelImg for annotating images.
+- Save annotations in XML format.
+
+## Encryption for Secure Storage
+- Encryption key stored as `encryption_key.key`.
+- Run the encryption script to secure images.
+
+## Criminal Detection Process
+1. **Face Detection**: Detects faces in uploaded images.
+2. **Recognition**: Compares detected faces with known criminal images.
+3. **Alert**: Identifies and sends a notification if a match is found.
 
 ---
 
-## Project Overview
+## Contributors
+- **Gauri Mahadik**
+- **Yuvraj Mandlik**
+- **Kaustubh Begede**
+- **Murari Mishra**
 
-The Criminal Face Detection System allows law enforcement agencies to detect criminal faces, predict gender, and flag suspicious activity using facial recognition. The project utilizes **OpenCV** for face and eye detection, a **pre-trained gender detection model**, and a simulated suspicious activity detection system.
-
-## Features
-
-- **Live Webcam Detection**: Capture real-time images through a webcam.
-- **Photo Upload Detection**: Upload photos for analysis.
-- **Face, Eye, and Gender Detection**: Uses pre-trained models for accurate results.
-- **Suspicion Flagging**: Simulated detection of suspicious activity based on facial encodings.
-
-## Demo
-
-- **Frontend**: [Live on Vercel](https://yourapp.vercel.app)
-- **Backend**: [Live on Render](https://yourapp.onrender.com)
-
-## File Structure
-
-```plaintext
-criminal-face-detection/
-├── backend/
-│   ├── app.py
-│   ├── models/
-│   │   ├── haarcascade_frontalface_default.xml
-│   │   ├── haarcascade_eye.xml
-│   │   ├── gender_deploy.prototxt
-│   │   └── gender_net.caffemodel
-│   ├── requirements.txt
-│   └── static/
-│       └── suspicious_model.h5  # Optional
-├── frontend/
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── components/
-│   └── package.json
-├── README.md
+## License
+MIT License
