@@ -1,8 +1,0 @@
-Flask==2.2.5
-opencv-python==4.8.0.74
-tensorflow==2.10.0
-pillow==9.2.0
-numpy==1.23.2
-dlib==19.24.0  # Required for advanced face recognition features
-flask-cors==3.0.10  # For allowing frontend-backend communication
-requests==2.28.1
